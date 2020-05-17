@@ -97,8 +97,8 @@
           transform-origin: center 91%;
   -webkit-box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
   -webkit-animation: pyk 0.5s ease both 0.5s;
           animation: pyk 0.5s ease both 0.5s;
 }
@@ -152,9 +152,52 @@
 }
 
 .clock__city {
+  cursor: default;
   position: absolute;
   bottom: 15%;
   color: #f0f0f0;
   -webkit-animation: pyk 0.5s ease both 0.5s;
           animation: pyk 0.5s ease both 0.5s;
+}
+
+.list--cities {
+  position: absolute;
+  top: 10vh;
+  left: 10vh;
+}
+
+.list--nav {
+  position: absolute;
+  right: 10vh;
+  top: 70vh;
+}
+
+.list__item {
+  margin: 2vh 0;
+  opacity: 0.5;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+
+.list__item:hover {
+  color: #447a7c;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.list__item.active {
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  opacity: 1;
+}
+
+.list__item.active::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: black;
+  -webkit-animation: pyk 1s ease infinite alternate;
+          animation: pyk 1s ease infinite alternate;
 }
